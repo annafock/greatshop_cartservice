@@ -1,0 +1,26 @@
+# greatshop_cartservice
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+
+# Netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
