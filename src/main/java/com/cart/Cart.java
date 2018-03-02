@@ -10,11 +10,11 @@ import java.util.List;
 
 final public class Cart {
 
-	final int id;
+	private final int id;
 	private List<Product> productList = new ArrayList<>(); //Note ArrayList is not a valid JSON type, that's why productList is both List and ArrayList
 	private double totalPrice;
 
-	public Cart(int cartId, ArrayList<Product> productList, double totalPrice) {
+	public Cart(int cartId, List<Product> productList, double totalPrice) {
 		this.id = cartId;
 		this.productList = productList;
 		this.totalPrice = totalPrice;
