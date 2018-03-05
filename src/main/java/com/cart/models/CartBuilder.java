@@ -48,6 +48,28 @@ public class CartBuilder {
         this.id = id;
         return this;
     }
+    
+    /**
+     * Setter for {@link CartBuilder#productList} 
+     * @param id the unique id for the {@link Cart}
+     * @return 
+     */
+    public CartBuilder productList(List<Product> productList) {
+
+        this.productList = productList;
+        return this;
+    }
+    
+    /**
+     * Setter for {@link CartBuilder#totalPrice} 
+     * @param id the unique id for the {@link Cart}
+     * @return 
+     */
+    public CartBuilder totalPrice(double totalPrice) {
+
+        this.totalPrice = totalPrice;
+        return this;
+    }
 	
 	
 	
