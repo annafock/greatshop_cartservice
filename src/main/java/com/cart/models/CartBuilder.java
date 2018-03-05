@@ -55,7 +55,9 @@ public class CartBuilder {
      * @return 
      */
     public CartBuilder productList(List<Product> productList) {
-
+    	if (productList == null) {
+            throw new IllegalArgumentException("ProductList cannot be null"); 
+         }
         this.productList = productList;
         return this;
     }
@@ -66,6 +68,9 @@ public class CartBuilder {
      * @return 
      */
     public CartBuilder totalPrice(double totalPrice) {
+    	if (totalPrice < 0) {
+            throw new IllegalArgumentException("totalPrice can't be less than 0");
+        }
 
         this.totalPrice = totalPrice;
         return this;
