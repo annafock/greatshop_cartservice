@@ -2,6 +2,7 @@ package com.cart;
 
 import java.util.Date;
 
+import javax.ws.rs.core.Application;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,7 +16,7 @@ import javax.ws.rs.core.UriInfo;
 @ApplicationPath("/cart")
 @Path("")
 
-public class App 
+public class CartServiceApp extends Application
 {
 	@GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,4 +34,6 @@ public class App
                 .links(selfLink, productsLink)
                 .build();
     }
+	
+	//public static void main(String[] args) {}
 }
