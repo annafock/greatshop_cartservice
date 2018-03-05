@@ -2,33 +2,28 @@ package com.cart.models;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.junit.Test;
 
 public class CartTest {
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
+	
+	private Cart cart;
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+    public void testCart()
+    {
+        System.out.println("Cart constructor");
+        List<Product> productList = new ArrayList<>();
+		productList.add(new Product(3, "Test product", "TestUrl", new Date()));
+        cart = new Cart(1, productList, 00.00);
+        assertTrue(Cart.class.isInstance(cart));
+        assertEquals("Ids do not match.", 1, cart.getId());
+        assertEquals("ProductLists do not match.", productList, cart.getProductList());
+        assertEquals("TotalPrice do not match.", 00,00, cart.getTotalPrice());
+        
+    }
 
 }
