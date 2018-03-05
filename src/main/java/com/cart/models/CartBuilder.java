@@ -16,7 +16,7 @@ public class CartBuilder {
 	private double totalPrice;
 	
 	public CartBuilder() {
-		
+		//Empty
 	}
 	
 	/** 
@@ -33,7 +33,21 @@ public class CartBuilder {
 				this.id, 
 				this.productList, 
 				this.totalPrice);
+		
 	}
+	
+	/**
+     * Setter for {@link CartBuilder#id} 
+     * @param id the unique id for the {@link Cart}
+     * @return 
+     */
+    public CartBuilder id(int id) {
+        if (id < 0) {
+            throw new IllegalArgumentException("Id can't be less than 0");
+        }
+        this.id = id;
+        return this;
+    }
 	
 	
 	
