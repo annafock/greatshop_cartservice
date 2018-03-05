@@ -16,7 +16,7 @@ public class CartBuilder {
 	private double totalPrice;
 	
 	public CartBuilder() {
-		
+		//Empty
 	}
 	
 	/** 
@@ -33,7 +33,48 @@ public class CartBuilder {
 				this.id, 
 				this.productList, 
 				this.totalPrice);
+		
 	}
+	
+	/**
+     * Setter for {@link CartBuilder#id} 
+     * @param id the unique id for the {@link Cart}
+     * @return 
+     */
+    public CartBuilder id(int id) {
+        if (id < 0) {
+            throw new IllegalArgumentException("Id can't be less than 0");
+        }
+        this.id = id;
+        return this;
+    }
+    
+    /**
+     * Setter for {@link CartBuilder#productList} 
+     * @param id the unique id for the {@link Cart}
+     * @return 
+     */
+    public CartBuilder productList(List<Product> productList) {
+    	if (productList == null) {
+            throw new IllegalArgumentException("ProductList cannot be null"); 
+         }
+        this.productList = productList;
+        return this;
+    }
+    
+    /**
+     * Setter for {@link CartBuilder#totalPrice} 
+     * @param id the unique id for the {@link Cart}
+     * @return 
+     */
+    public CartBuilder totalPrice(double totalPrice) {
+    	if (totalPrice < 0) {
+            throw new IllegalArgumentException("totalPrice can't be less than 0");
+        }
+
+        this.totalPrice = totalPrice;
+        return this;
+    }
 	
 	
 	
